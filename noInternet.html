@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No internet</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .container{
+            height: 100vh;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(32, 33, 36, 1);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .smallcontainer{
+            width: 50%;
+            height: 40%;
+            margin-top: 0;
+        }
+        .noInternet{
+            width: 80%;
+            height: 50%;
+            margin-top: 0;
+            position: absolute;
+            top: 18%;
+            left: 28%;
+        }
+        .sc{
+            width: 100%;
+            float: left;
+            position: absolute;
+            top: 43%;
+            left: 3%;
+            margin-top: 10px;
+        }
+        h1{
+            color: rgba(151, 157, 162, 1);
+            margin-bottom: 0px;
+        }
+        h6{
+            color: rgba(141, 147, 152, 1);
+            margin-top: 20px;
+            font-size: 12px;
+        }
+        ul{
+            color: rgba(141, 147, 152, 1);
+        }
+        li{
+            color: rgba(141, 147, 152, 1);
+        }
+        ul a{
+            color: rgba(111, 143, 195, 1);
+            text-decoration: none;
+        }
+        .err{
+            position: absolute;
+            top: 60%;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="smallcontainer">
+            <div class="noInternet">
+                <img src="dino.png">
+                <h1><span>No internet</span></h1>
+                <h6>Try:</h6>
+                <div class="sc">
+                    <ul>
+                        <li>Checking the network cables, modem, and router</li>
+                        <li>Reconnecting to Wi-Fi</li>
+                        <li><a href="#">Running Connectivity Diagnostics</a></li>
+                    </ul>
+                    <br>
+                </div>
+                <h6 class="err">ERR_INTERNET_DISCONNECTED</h6>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

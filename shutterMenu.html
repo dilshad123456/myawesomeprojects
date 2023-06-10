@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shutter Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: cursive;
+            box-sizing: border-box;
+            color: #fff;
+        }
+        .container{
+           width: 100%;
+           height: 100vh;
+           position: relative;
+           overflow: hidden;
+           background: #001e4d;
+           display: flex;
+           position: relative;
+           overflow: hidden;
+
+        }
+        .navbar{
+            width: 100%;
+            position: fixed;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1;
+        }
+        nav{
+            width: 100%;
+        }
+        .nav{
+            font-size: 50px;
+            float: left;
+        }
+        nav i{
+            float: left;
+            position: fixed;
+            right: 0;
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+        .list{
+            font-size: 50px;
+        }
+        .row{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            position: absolute;
+            top: 0;
+        }
+        #leftCol, #rightCol{
+            flex-basis: 50%;
+            height: 100%;
+            background: #090010;
+            z-index: 2;
+            transition: 1s;
+        }
+        #rightCol{
+            align-items: center;
+            justify-content: center;
+        }
+        .a{
+            position: absolute;
+            top: 20%;
+            right: 20%;
+        }
+        .b{
+            position: absolute;
+            top: 32%;
+            right: 20%;
+        }
+        .c{
+            position: absolute;
+            top: 44%;
+            right: 20%;
+        }
+        .d{
+            position: absolute;
+            top: 56%;
+            right: 20%;
+        }
+        .e{
+            position: absolute;
+            top: 68%;
+            right: 20%;
+        }
+        .ul{
+            font-size: 50px;
+            list-style-type: none;
+        }
+        .ab{
+            position: absolute;
+            top: 20%;
+            left: 2%;
+        }
+        .bc{
+            position: absolute;
+            top: 32%;
+            left: 2%;
+        }
+        .cd{
+            position: absolute;
+            top: 44%;
+            left: 2%;
+        }
+        .de{
+            position: absolute;
+            top: 56%;
+            left: 2%;
+        }
+        .ef{
+            position: absolute;
+            top: 68%;
+            left: 2%;
+        }
+        .f{
+            position: absolute;
+            top: 1%;
+            right: 1%;
+        }
+        .fas::after{
+            content: '';
+            width: 10px;
+            height: 0px;
+            position: absolute;
+            background: #fff;
+            border-radius: 10px;
+            position: absolute;
+            right: 45%;
+            bottom: 23%;
+            z-index: -1;
+            transition: all 1s;
+        }
+        .fas:hover::after{
+            height: 460px;
+        }
+        #leftCol{
+            transform: translateY(-100%);
+        }
+        #rightCol{
+            transform: translateY(100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <nav>
+                <h1 class="nav">Dilshad</h1>
+                <i class="fa fa-list list menu" id="menuIcon"></i>
+            </nav>
+        </div>
+        <div class="row">
+            <div id="leftCol">
+                <ul class="ul">
+                    <li class="ab">Home</li>
+                    <li class="bc">About</li>
+                    <li class="cd">Contact</li>
+                    <li class="de">Services</li>
+                    <li class="ef">Portfolio</li>
+                </ul>
+            </div>
+            <div id="rightCol">
+                <i class="fa fa-close f" style="font-size: 50px;" id="closeIcon"></i>
+                <div class="fas">
+                    <i class="fa fa-facebook a" style="font-size: 50px;"></i>
+                    <br>
+                    <i class="fa fa-instagram b" style="font-size: 50px;"></i>
+                    <br>
+                    <i class="fa fa-twitter c" style="font-size: 50px;"></i>
+                    <br>
+                    <i class="fa fa-telegram d" style="font-size: 50px;"></i>
+                    <br>
+                    <i class="fa fa-youtube e" style="font-size: 50px;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <Script>
+
+        var menuIcon = document.getElementById("menuIcon");
+        var closeIcon = document.getElementById("closeIcon");
+        var leftCol = document.getElementById("leftCol");
+        var rightCol = document.getElementById("rightCol");
+
+        menuIcon.onclick = function(){
+            leftCol.style.transform = "translateY(0px)";
+            rightCol.style.transform = "translateY(0px)";
+        }
+
+        closeIcon.onclick = function(){
+            leftCol.style.transform = "translateY(-100%)";
+            rightCol.style.transform = "translateY(100%)";
+        }
+
+    </Script>
+
+</body>
+</html>

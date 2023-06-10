@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danger</title>
+    <Style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            color: black;
+            font-family: cursive;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            background-color: grey;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            color: black;
+        }
+        .btn{
+            width: 300px;
+            height: 150px;
+            background-color: black;
+            color: white;
+            border-radius: 13px;
+            cursor: pointer;
+            outline: none;
+            padding: 10px 60px;
+            font-weight: 500;
+            font-size: 22px;
+            transition: 0.5s;
+        }
+        .btn:hover{
+            background-color: grey;
+        }
+        h1{
+            color: white;
+        }
+        .popup{
+            width: 300px;
+            border: 5px solid black;
+            border-radius: 25px;
+            background-color: white;
+            color: black;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%,-50%)scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            visibility: hidden;
+            transition: transform 0.6s, top 0.6s;
+        }
+        .open-popup{
+            top: 50%;
+            visibility: visible;
+            transform: translate(-50%,-50%)scale(1);
+        }
+        .popup h2{
+            font-size: 38px;
+            font-weight: 400;
+            margin: 30px 0 10px;
+        }
+        .popup button{
+            width: 100%;
+            margin-top: 50px;
+            padding: 10px 0;
+            background-color: black;
+            color: white;
+            transition: 0.5s;
+        }
+        .popup button:hover{
+            background-color: white;
+            color: black;
+        }
+    </Style>
+</head>
+<body>
+    <div class="container">
+        <button type="submit" class="btn" onclick="openPopup()"><h1>Don't click</h1></button>
+
+        <div class="popup" id="popup">
+            <img style="width: 200px;" src="https://img.freepik.com/premium-vector/skull-crossbones-mark-danger-warning-vector-format_368602-4699.jpg?w=2000">
+            <h2>You are<br>HACKED</h2>
+            <button type="button" onclick="closePopup()"> Ok </button>
+        </div>
+    </div>
+    <script>
+        let popup = document.getElementById("popup");
+
+        function openPopup(){
+            popup.classList.add("open-popup");
+        }
+        function closePopup(){
+            popup.classList.remove("open-popup");
+        }
+        {
+        window.alert("Danger don't click the button");
+        }
+    </script>
+</body>
+</html>

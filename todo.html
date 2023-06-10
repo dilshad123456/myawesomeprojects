@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+        .container{
+            height: 100vh;
+            width: 100%;
+            padding: 10px;
+            background-image: linear-gradient(to bottom right , #FF1493 , #9400D3 , #1E90FF);
+        }
+        .list{
+            background-color: rgba(255, 255, 255, 0.4);
+            width: 100%;
+            max-width: 540px;
+            padding: 40px 30px 70px;
+            margin: 100px auto 20px;
+            border-radius: 25px;
+            color: white; 
+        }
+        .not{
+            height: 10%;
+        }
+        .row{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 30px;
+            border: 2px solid #1E90FF;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+        input{
+            flex: 1;
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 10px;
+        }
+        button{
+            border: none;
+            outline: none;
+            padding: 16px 50px;
+            cursor: pointer;
+            border-radius: 40px;
+            background-color: #1E90FF;
+            transition: 0.6s;
+        }
+        button:hover{
+            background-color: #FF1493;
+        }
+        ul li{
+            list-style-type: none;
+            font-size: 17px;
+            padding: 12px 8px 12px 50px;
+            user-select: none;
+            position: relative;
+        }
+        ul li::before{
+            content: '';
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            border-radius: 0%;
+            background-image: url(https://icons.iconarchive.com/icons/icons8/windows-8/512/User-Interface-Unchecked-Checkbox-icon.png);
+            background-size: cover;
+            background-position: center;
+            top: 12px;
+            left: 8px;
+        }
+        ul li.checked{
+            text-decoration: line-through;
+            color: black;
+        }
+        ul li.checked::before{
+            background-image: url(data:image/png;base64,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);
+        }
+        ul li span{
+           position: absolute;
+           right: 0;
+           top: 5px;
+           width: 40px;
+           height: 40px;
+           font-size: 22px;
+           color: black;
+           line-height: 40px;
+           text-align: center;
+           border-radius: 50%; 
+           transition: 0.6s;
+        }
+        ul li span:hover{
+            background: #1E90FF;
+        } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="not"></div>
+        <div class="list">
+            <h2>To Do List <i class="fa fa-list"></i></h2>
+            <div class="row">
+               <input type="text" id="input-box" placeholder="Add item">
+               <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="list-container">
+                <!--<li class="checked">task1</li>
+                <li>task2</li>
+                <li>task3</li>-->
+            </ul>
+        </div>
+    </div>
+    <script>
+        const inputBox = document.getElementById("input-box");
+        const listContainer = document.getElementById("list-container");
+
+        function addTask(){
+            if(inputBox.value === ''){
+                alert("You must write something!");
+            }
+            else{
+                let li = document.createElement("li");
+                li.innerHTML = inputBox.value;
+                listContainer.appendChild(li);
+                let span = document.createElement("span");
+                span.innerHTML = "\u00d7";
+                li.appendChild(span);
+            }
+            inputBox.value = "";
+            saveData();
+        }
+        
+        listContainer.addEventListener("click", function(e){
+            if(e.target.tagName === "LI"){
+                e.target.classList.toggle("checked");
+                saveData();
+            }
+            else if(e.target.tagName === "SPAN"){
+                e.target.parentElement.remove();
+                saveData();
+            }
+        }, false);
+
+        function saveData(){
+            localStorage.setItem("data", listContainer.innerHTML);
+        }
+        function showTask(){
+            listContainer.innerHTML = localStorage.getItem("data");
+        }
+        showTask(); 
+    </script>
+</body>
+</html>

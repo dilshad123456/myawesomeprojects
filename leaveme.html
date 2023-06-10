@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave me</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: cursive;
+            box-sizing: border-box;
+        }
+        .container{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(to bottom , #f6ea41 , #f048c6);
+        }
+        #model-box{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            padding: 10px 5px;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background: white;
+            border-radius: 13px;
+            overflow: hidden;
+            display: none;
+        }
+        .text{
+            padding: 20px 40px 40px 40px;
+            font-size: 14px;
+            line-height: 22px;
+        }
+        .text h2{
+            font-size: 38px;
+            font-weight: 600;
+            color: #f6ea41;
+        }
+        .text small{
+            color: #f048c6;
+        }
+        .text button{
+            width: 50%;
+            height: 50px;
+            border: 2px solid #f6ea41;
+            background-color: #f6ea41;
+            border-radius: 25px;
+            transition: 0.6s;
+        }
+        .text button:hover{
+            background-color: #f048c6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    </div>
+    <div id="model-box">
+        <img style="width: 300px;" src="https://i.pinimg.com/736x/1a/ed/58/1aed5807ed84e01bb5ceb1440d65dc5a.jpg">
+        <div class="text">
+            <h2>Please dont leave me</h2>
+            <small>Please dont cross this tab</small>
+            <p>This popup is made by Dilshad and whenever you try to close the tab this popup will bw shown to you</p>
+            <button type="button" onclick="closeModel()">Ok</button>
+        </div>
+    </div>
+    <script>
+        let modelbox = document.getElementById("model-box") ;
+        document.onmouseleave = function(){
+            modelbox.style.display = "block";
+        }
+        function closeModel(){
+            modelbox.style.display = "none";
+        }
+        {
+        window.alert("Hidden surprise");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost's type</title>
+    <style>
+        *{
+            font-family: cursive;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        h2{
+            color: yellow;
+            font-size: 50px;
+            position: absolute;
+            top: 35%;
+            left: 35%;
+            margin-bottom: 50px;
+        }
+        h1{
+            font-size: 72px;
+            margin: auto;
+        }
+        img{
+            position: absolute;
+            top: 5%;
+            left: 40%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="data:image/png;base64,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">
+        <br>
+        <h2>Ghost's messages:</h2>
+        <h1 class="auto-input">Hi I am Mr. Ghost</h1>
+    </div>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed(".auto-input",{
+            strings: ["Hi I am Mr. Ghost", "I am a Web Developer","I am from Ghostland","I can make a very","beautiful website","for you/your buissness", "contact information","ghost@gmail.com","1234567890"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            loop: true
+        })
+    </script>
+</body>
+</html>

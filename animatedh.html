@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <script src="https://kit.fontawesome.com/6a0c5dafc6.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+        .box{
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(to right , purple , blue);
+            background-size: cover;
+            background-position: center;
+            padding: 0 8%;
+            position: relative;
+        }
+        nav{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 5px 0;
+            color: white;
+        }
+        nav ul li a{
+            color: white;
+            text-decoration: none;
+            position: relative;
+        }
+        nav ul li{
+            list-style-type: none;
+            display: inline-block;
+            margin: 10px 30px;
+        }
+        h1{
+            width: 190px;
+            cursor: pointer;
+        }
+        nav ul{
+            flex: 1;
+            text-align: right;
+            padding-right: 30px;
+        }
+        nav ul li a::after{
+            content: '';
+            width: 0;
+            height: 3px;
+            position: absolute;
+            bottom: 5;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            transition: width 0.5s;
+        }
+        nav ul li a:hover::after{
+            width: 50%;
+        }
+        .anim{
+            position: absolute;
+            bottom: 8%;
+            color: white;
+        }
+        .anim h2{
+            font-size: 50px;
+            font-weight: 600;
+        }
+        .anim h1{
+            display: inline-block;
+            font-size: 190px;
+            line-height: 160px;
+            width: 100%;
+            margin-left: -10px;
+            color: transparent;
+            -webkit-text-stroke: 1px white;
+            background-image: url(https://w0.peakpx.com/wallpaper/379/588/HD-wallpaper-black-white-stripes-background-grunge-black-white-background-stone-texture-zebra-texture-lines-texture-thumbnail.jpg);
+            background-size: auto;
+            -webkit-background-clip: text;
+            background-position: 0 0;
+            animation: back 20s linear infinite;
+            }
+        @keyframes back{
+            100%{
+                background-position: 2000px 0;
+            }
+        }
+        .anim h3{
+            font-size: 40px;
+            font-weight: 500;
+         }
+        .anim .row{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 30px;
+        }
+        .anim a{
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-right: 20px;
+            border: 2px solid white;
+            display: flex;
+            align-items: center;
+        }
+        .anim a span{
+            font-size: 30px;
+            line-height: 15px;
+            margin-left: 5px;
+        }
+        .si{
+            position: absolute;
+            right: 5%;
+            bottom: 8%;
+        }
+        .si i{
+            width: 25px;
+            display: block;
+            margin: 25px 5px;
+            color: white;
+        }
+        .categories{
+            margin: 70px 0;
+        }
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+            border: 5px solid black;
+            border-radius: 13px;
+            outline: 2px;
+            }
+        .sc{
+            margin: auto;
+            padding-left: 17%;
+            padding-right: 17%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+       <nav>
+        <h1>ARA Electric</h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+       </nav>
+       <div class="anim">
+           <h2>ARA</h2>
+           <h1>Electric</h1>
+           <h3>Shop</h3>
+           <h3>We sell/repair electricals</h3>
+           <div class="row">
+             <a href="#">Explore our services</a>
+             <a href="#">Contact with us <span>&#x21fe;</span></a>
+             <span>You can know more about us<br>in our this webssite</span>
+           </div>
+       </div>
+       <div class="si">
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="categories">
+        <div class="sc">
+            <div class="row">
+                <div class="column">
+                    <img src="https://cdn.moglix.com/p/tv1Tu6GroeUez.png" alt="fan" style="width:100%">
+                    <h2>We have both<br>hanging/table fans<br>repairing also</h2>
+                </div>
+                <div class="column">
+                    <img src="https://m.media-amazon.com/images/I/61gd5ZJZaVL._SL1500_.jpg" alt="iron" style="width:100%">
+                    <h2>Both<br>sell/repair<br>done</h2>
+                </div>
+                <div class="column">
+                    <img src="https://2.imimg.com/data2/HX/NN/MY-3585336/electrical-switches-500x500.jpg" alt="switches" style="width:100%">
+                    <h2>Switches available<br>in a large variety<br>bed/bell</h2>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <br>    
+        </div>
+    </div>
+</body>
+</html>
